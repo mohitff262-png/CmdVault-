@@ -1,0 +1,275 @@
+[
+ {
+  "id": "ssh-ssh-connect",
+  "slug": "ssh-connect",
+  "name": "ssh",
+  "description": "Connect to a remote server.",
+  "explanation": "Verify the host fingerprint on first connect. Prefer key authentication over passwords.",
+  "category": "ssh",
+  "syntax": "ssh [-i <key>] [-p <port>] <user>@<host>",
+  "examples": [
+   {
+    "command": "ssh deploy@203.0.113.10",
+    "description": "Log in as deploy."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "ssh"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [
+   {
+    "message": "Permission denied (publickey)",
+    "fix": "Make sure your public key is in ~/.ssh/authorized_keys on the server and use -i to select the right key."
+   }
+  ],
+  "keywords": [
+   "connect",
+   "login",
+   "remote",
+   "server",
+   "ssh",
+   "vps"
+  ],
+  "tags": [
+   "ssh",
+   "connect",
+   "login"
+  ],
+  "sources": [
+   "https://man.openbsd.org/ssh"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": true
+ },
+ {
+  "id": "ssh-ssh-keygen",
+  "slug": "ssh-keygen",
+  "name": "ssh-keygen -t ed25519",
+  "description": "Generate an SSH key pair.",
+  "explanation": "Protect the private key with a passphrase. Share only the .pub file; never upload or paste the private key.",
+  "category": "ssh",
+  "syntax": "ssh-keygen -t ed25519 -C \"<comment>\"",
+  "examples": [
+   {
+    "command": "ssh-keygen -t ed25519 -C \"me@example.com\"",
+    "description": "Create ~/.ssh/id_ed25519."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "ssh"
+  ],
+  "difficulty": "beginner",
+  "risk": "caution",
+  "commonErrors": [],
+  "keywords": [
+   "ed25519",
+   "generate",
+   "github",
+   "key",
+   "keygen",
+   "ssh",
+   "t"
+  ],
+  "tags": [
+   "ssh",
+   "ed25519",
+   "generate"
+  ],
+  "sources": [
+   "https://man.openbsd.org/ssh"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "ssh-ssh-copy-id",
+  "slug": "ssh-copy-id",
+  "name": "ssh-copy-id",
+  "description": "Install your public key on a server.",
+  "explanation": "Appends your key to ~/.ssh/authorized_keys. Not available by default in some Termux or Windows setups; copy the key manually.",
+  "category": "ssh",
+  "syntax": "ssh-copy-id [-i <key.pub>] <user>@<host>",
+  "examples": [
+   {
+    "command": "ssh-copy-id deploy@203.0.113.10",
+    "description": "Enable key login."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos"
+  ],
+  "tools": [
+   "ssh"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "authorized",
+   "copy",
+   "id",
+   "key",
+   "server",
+   "ssh"
+  ],
+  "tags": [
+   "ssh",
+   "authorized",
+   "copy"
+  ],
+  "sources": [
+   "https://man.openbsd.org/ssh"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "ssh-scp",
+  "slug": "scp",
+  "name": "scp",
+  "description": "Copy files over SSH.",
+  "explanation": "scp uses uppercase -P for port (ssh uses lowercase -p). Existing files are overwritten silently.",
+  "category": "ssh",
+  "syntax": "scp [-P <port>] <src> <user>@<host>:<dest>",
+  "examples": [
+   {
+    "command": "scp ./app.tar.gz deploy@203.0.113.10:/tmp/",
+    "description": "Upload an archive."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "ssh"
+  ],
+  "difficulty": "beginner",
+  "risk": "caution",
+  "commonErrors": [],
+  "keywords": [
+   "copy",
+   "download",
+   "files",
+   "scp",
+   "transfer",
+   "upload"
+  ],
+  "tags": [
+   "ssh",
+   "copy",
+   "download"
+  ],
+  "sources": [
+   "https://man.openbsd.org/ssh"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "ssh-rsync-sync",
+  "slug": "rsync-sync",
+  "name": "rsync -avz",
+  "description": "Efficiently sync directories.",
+  "explanation": "Trailing slash on the source matters. Always try --dry-run first; --delete removes remote files that are not in the source.",
+  "category": "ssh",
+  "syntax": "rsync -avz [--dry-run] [--delete] <src>/ <user>@<host>:<dest>/",
+  "examples": [
+   {
+    "command": "rsync -avz --dry-run ./dist/ deploy@203.0.113.10:/var/www/app/",
+    "description": "Preview a deploy."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "termux"
+  ],
+  "tools": [
+   "ssh"
+  ],
+  "difficulty": "intermediate",
+  "risk": "caution",
+  "commonErrors": [],
+  "keywords": [
+   "avz",
+   "backup",
+   "deploy",
+   "rsync",
+   "sync",
+   "transfer"
+  ],
+  "tags": [
+   "ssh",
+   "avz",
+   "backup"
+  ],
+  "sources": [
+   "https://man.openbsd.org/ssh"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "ssh-ssh-tunnel",
+  "slug": "ssh-tunnel",
+  "name": "ssh -L",
+  "description": "Forward a local port to a remote service.",
+  "explanation": "Keeps the database off the public internet. Bind to 127.0.0.1 only.",
+  "category": "ssh",
+  "syntax": "ssh -L <local>:<host>:<remote> <user>@<server>",
+  "examples": [
+   {
+    "command": "ssh -L 5433:localhost:5432 deploy@203.0.113.10",
+    "description": "Reach a remote PostgreSQL on localhost:5433."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "ssh"
+  ],
+  "difficulty": "advanced",
+  "risk": "caution",
+  "commonErrors": [],
+  "keywords": [
+   "database",
+   "forward",
+   "l",
+   "port",
+   "ssh",
+   "tunnel"
+  ],
+  "tags": [
+   "ssh",
+   "database",
+   "forward"
+  ],
+  "sources": [
+   "https://man.openbsd.org/ssh"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ }
+]

@@ -1,0 +1,439 @@
+[
+ {
+  "id": "termux-termux-pkg-update",
+  "slug": "termux-pkg-update",
+  "name": "pkg update && pkg upgrade",
+  "description": "Refresh package lists and upgrade Termux packages.",
+  "explanation": "Run this first on a fresh install. Termux does not use sudo or apt in the usual rooted-Linux way; pkg wraps apt inside the Termux prefix.",
+  "category": "termux",
+  "syntax": "pkg update && pkg upgrade",
+  "examples": [
+   {
+    "command": "pkg update && pkg upgrade -y",
+    "description": "Update everything without prompts."
+   }
+  ],
+  "platforms": [
+   "termux"
+  ],
+  "tools": [
+   "termux",
+   "pkg"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [
+   {
+    "message": "unable to locate package",
+    "fix": "Run termux-change-repo to pick a working mirror, then pkg update again."
+   }
+  ],
+  "keywords": [
+   "packages",
+   "pkg",
+   "termux",
+   "update",
+   "upgrade"
+  ],
+  "tags": [
+   "termux",
+   "packages",
+   "pkg"
+  ],
+  "sources": [
+   "https://wiki.termux.com/wiki/Main_Page"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "termux-termux-pkg-install-git",
+  "slug": "termux-pkg-install-git",
+  "name": "pkg install git",
+  "description": "Install Git in Termux.",
+  "explanation": "Verify with git --version. Configure git config --global user.name and user.email next.",
+  "category": "termux",
+  "syntax": "pkg install git",
+  "examples": [
+   {
+    "command": "pkg install git",
+    "description": "Install Git."
+   }
+  ],
+  "platforms": [
+   "termux"
+  ],
+  "tools": [
+   "termux",
+   "pkg"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "git",
+   "install",
+   "pkg",
+   "termux"
+  ],
+  "tags": [
+   "termux",
+   "git",
+   "install"
+  ],
+  "sources": [
+   "https://wiki.termux.com/wiki/Main_Page"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "termux-termux-pkg-install-nodejs",
+  "slug": "termux-pkg-install-nodejs",
+  "name": "pkg install nodejs",
+  "description": "Install Node.js and npm in Termux.",
+  "explanation": "Installs node and npm from Termux repositories. Versions may differ from nodejs.org; check node -v. Some native npm modules need build tools: pkg install build-essential python.",
+  "category": "termux",
+  "syntax": "pkg install nodejs  (or nodejs-lts)",
+  "examples": [
+   {
+    "command": "pkg install nodejs-lts",
+    "description": "Install the LTS build."
+   }
+  ],
+  "platforms": [
+   "termux"
+  ],
+  "tools": [
+   "termux",
+   "pkg"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "install",
+   "javascript",
+   "node",
+   "nodejs",
+   "npm",
+   "pkg",
+   "termux"
+  ],
+  "tags": [
+   "termux",
+   "install",
+   "javascript"
+  ],
+  "sources": [
+   "https://wiki.termux.com/wiki/Main_Page"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": true
+ },
+ {
+  "id": "termux-termux-pkg-install-python",
+  "slug": "termux-pkg-install-python",
+  "name": "pkg install python",
+  "description": "Install Python and pip in Termux.",
+  "explanation": "Use python -m venv for isolated environments. Packages with native extensions may need pkg install build-essential.",
+  "category": "termux",
+  "syntax": "pkg install python",
+  "examples": [
+   {
+    "command": "pkg install python",
+    "description": "Install Python 3."
+   }
+  ],
+  "platforms": [
+   "termux"
+  ],
+  "tools": [
+   "termux",
+   "pkg"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "install",
+   "pip",
+   "pkg",
+   "python",
+   "termux"
+  ],
+  "tags": [
+   "termux",
+   "install",
+   "pip"
+  ],
+  "sources": [
+   "https://wiki.termux.com/wiki/Main_Page"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "termux-termux-setup-storage",
+  "slug": "termux-setup-storage",
+  "name": "termux-setup-storage",
+  "description": "Grant Termux access to shared Android storage.",
+  "explanation": "Creates ~/storage with links to Downloads, DCIM and others. It needs your approval in the Android dialog.",
+  "category": "termux",
+  "syntax": "termux-setup-storage",
+  "examples": [
+   {
+    "command": "termux-setup-storage",
+    "description": "Show the Android permission prompt."
+   }
+  ],
+  "platforms": [
+   "termux"
+  ],
+  "tools": [
+   "termux",
+   "pkg"
+  ],
+  "difficulty": "beginner",
+  "risk": "caution",
+  "commonErrors": [],
+  "keywords": [
+   "android",
+   "downloads",
+   "permission",
+   "setup",
+   "shared",
+   "storage",
+   "termux"
+  ],
+  "tags": [
+   "termux",
+   "android",
+   "downloads"
+  ],
+  "sources": [
+   "https://wiki.termux.com/wiki/Main_Page"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": true
+ },
+ {
+  "id": "termux-termux-wake-lock",
+  "slug": "termux-wake-lock",
+  "name": "termux-wake-lock",
+  "description": "Ask Android to keep Termux awake.",
+  "explanation": "Requires the Termux:API app for some features; the wake lock is a request and some vendors still kill background apps. Battery usage increases.",
+  "category": "termux",
+  "syntax": "termux-wake-lock | termux-wake-unlock",
+  "examples": [
+   {
+    "command": "termux-wake-lock",
+    "description": "Reduce the chance Android suspends a running server."
+   }
+  ],
+  "platforms": [
+   "termux"
+  ],
+  "tools": [
+   "termux",
+   "pkg"
+  ],
+  "difficulty": "intermediate",
+  "risk": "caution",
+  "commonErrors": [],
+  "keywords": [
+   "background",
+   "battery",
+   "keep",
+   "lock",
+   "process",
+   "running",
+   "termux",
+   "wake"
+  ],
+  "tags": [
+   "termux",
+   "background",
+   "battery"
+  ],
+  "sources": [
+   "https://wiki.termux.com/wiki/Main_Page"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "termux-termux-pkg-search",
+  "slug": "termux-pkg-search",
+  "name": "pkg search",
+  "description": "Search available packages.",
+  "explanation": "Use before assuming a package name; Termux names often differ from Debian.",
+  "category": "termux",
+  "syntax": "pkg search <term>",
+  "examples": [
+   {
+    "command": "pkg search sqlite",
+    "description": "Find SQLite packages."
+   }
+  ],
+  "platforms": [
+   "termux"
+  ],
+  "tools": [
+   "termux",
+   "pkg"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "find",
+   "package",
+   "pkg",
+   "search",
+   "termux"
+  ],
+  "tags": [
+   "termux",
+   "find",
+   "package"
+  ],
+  "sources": [
+   "https://wiki.termux.com/wiki/Main_Page"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "termux-termux-install-openssh",
+  "slug": "termux-install-openssh",
+  "name": "pkg install openssh",
+  "description": "Install the SSH client and server.",
+  "explanation": "Provides the client tools. Termux sshd listens on port 8022, not 22, and uses key or password auth set with passwd.",
+  "category": "termux",
+  "syntax": "pkg install openssh",
+  "examples": [
+   {
+    "command": "pkg install openssh",
+    "description": "Install ssh, scp, ssh-keygen."
+   }
+  ],
+  "platforms": [
+   "termux"
+  ],
+  "tools": [
+   "termux",
+   "pkg"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "client",
+   "install",
+   "openssh",
+   "pkg",
+   "server",
+   "ssh"
+  ],
+  "tags": [
+   "termux",
+   "client",
+   "install"
+  ],
+  "sources": [
+   "https://wiki.termux.com/wiki/Main_Page"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "termux-termux-sshd-start",
+  "slug": "termux-sshd-start",
+  "name": "sshd",
+  "description": "Start the Termux SSH server.",
+  "explanation": "Prefer key-based auth. Only run it on trusted networks. Find your user with whoami, then connect with ssh -p 8022 user@phone-ip.",
+  "category": "termux",
+  "syntax": "sshd",
+  "examples": [
+   {
+    "command": "sshd",
+    "description": "Start sshd on port 8022."
+   }
+  ],
+  "platforms": [
+   "termux"
+  ],
+  "tools": [
+   "termux",
+   "pkg"
+  ],
+  "difficulty": "intermediate",
+  "risk": "caution",
+  "commonErrors": [],
+  "keywords": [
+   "access",
+   "phone",
+   "remote",
+   "server",
+   "sshd"
+  ],
+  "tags": [
+   "termux",
+   "access",
+   "phone"
+  ],
+  "sources": [
+   "https://wiki.termux.com/wiki/Main_Page"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "termux-termux-change-repo",
+  "slug": "termux-change-repo",
+  "name": "termux-change-repo",
+  "description": "Pick a different package mirror.",
+  "explanation": "Use when pkg update fails or is slow.",
+  "category": "termux",
+  "syntax": "termux-change-repo",
+  "examples": [
+   {
+    "command": "termux-change-repo",
+    "description": "Open the mirror selector."
+   }
+  ],
+  "platforms": [
+   "termux"
+  ],
+  "tools": [
+   "termux",
+   "pkg"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "change",
+   "locate",
+   "mirror",
+   "package",
+   "repo",
+   "repository",
+   "slow",
+   "termux",
+   "to",
+   "unable"
+  ],
+  "tags": [
+   "termux",
+   "change",
+   "locate"
+  ],
+  "sources": [
+   "https://wiki.termux.com/wiki/Main_Page"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ }
+]

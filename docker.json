@@ -1,0 +1,396 @@
+[
+ {
+  "id": "docker-docker-run",
+  "slug": "docker-run",
+  "name": "docker run",
+  "description": "Start a container from an image.",
+  "explanation": "-d background, --rm delete on exit, -p publish a port. Published ports are reachable from other machines unless bound to 127.0.0.1.",
+  "category": "docker",
+  "syntax": "docker run [-d] [--rm] [--name <n>] [-p host:container] <image>",
+  "examples": [
+   {
+    "command": "docker run -d --name web -p 8080:80 nginx",
+    "description": "Run nginx detached on host port 8080."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows"
+  ],
+  "tools": [
+   "docker"
+  ],
+  "difficulty": "beginner",
+  "risk": "caution",
+  "commonErrors": [
+   {
+    "message": "port is already allocated",
+    "fix": "Another process or container uses the host port. Pick a different host port."
+   }
+  ],
+  "keywords": [
+   "container",
+   "docker",
+   "image",
+   "run",
+   "start"
+  ],
+  "tags": [
+   "docker",
+   "container",
+   "docker"
+  ],
+  "sources": [
+   "https://docs.docker.com/reference/cli/docker/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": true
+ },
+ {
+  "id": "docker-docker-ps",
+  "slug": "docker-ps",
+  "name": "docker ps",
+  "description": "List running containers.",
+  "explanation": "Shows IDs, images, ports and status.",
+  "category": "docker",
+  "syntax": "docker ps [-a]",
+  "examples": [
+   {
+    "command": "docker ps -a",
+    "description": "Include stopped containers."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows"
+  ],
+  "tools": [
+   "docker"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "containers",
+   "docker",
+   "list",
+   "ps",
+   "running"
+  ],
+  "tags": [
+   "docker",
+   "containers",
+   "docker"
+  ],
+  "sources": [
+   "https://docs.docker.com/reference/cli/docker/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "docker-docker-images",
+  "slug": "docker-images",
+  "name": "docker images",
+  "description": "List local images.",
+  "explanation": "Remove with docker rmi <image>.",
+  "category": "docker",
+  "syntax": "docker images",
+  "examples": [
+   {
+    "command": "docker images",
+    "description": "Show images and sizes."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows"
+  ],
+  "tools": [
+   "docker"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "docker",
+   "images",
+   "list",
+   "local"
+  ],
+  "tags": [
+   "docker",
+   "docker",
+   "images"
+  ],
+  "sources": [
+   "https://docs.docker.com/reference/cli/docker/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "docker-docker-build",
+  "slug": "docker-build",
+  "name": "docker build",
+  "description": "Build an image from a Dockerfile.",
+  "explanation": "The context is sent to the daemon; use .dockerignore to exclude node_modules and secrets.",
+  "category": "docker",
+  "syntax": "docker build -t <name:tag> <context>",
+  "examples": [
+   {
+    "command": "docker build -t myapp:1.0 .",
+    "description": "Build from the current folder."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows"
+  ],
+  "tools": [
+   "docker"
+  ],
+  "difficulty": "intermediate",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "build",
+   "docker",
+   "dockerfile",
+   "image"
+  ],
+  "tags": [
+   "docker",
+   "build",
+   "docker"
+  ],
+  "sources": [
+   "https://docs.docker.com/reference/cli/docker/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "docker-docker-compose-up",
+  "slug": "docker-compose-up",
+  "name": "docker compose up",
+  "description": "Start services defined in compose.yaml.",
+  "explanation": "Uses the modern docker compose plugin; older setups use docker-compose.",
+  "category": "docker",
+  "syntax": "docker compose up [-d] [--build]",
+  "examples": [
+   {
+    "command": "docker compose up -d --build",
+    "description": "Rebuild and run in the background."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows"
+  ],
+  "tools": [
+   "docker"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "compose",
+   "docker",
+   "services",
+   "start",
+   "up"
+  ],
+  "tags": [
+   "docker",
+   "compose",
+   "docker"
+  ],
+  "sources": [
+   "https://docs.docker.com/reference/cli/docker/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "docker-docker-compose-down",
+  "slug": "docker-compose-down",
+  "name": "docker compose down",
+  "description": "Stop and remove compose containers and networks.",
+  "explanation": "-v also deletes named volumes, which destroys database data.",
+  "category": "docker",
+  "syntax": "docker compose down [-v]",
+  "examples": [
+   {
+    "command": "docker compose down",
+    "description": "Stop the stack."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows"
+  ],
+  "tools": [
+   "docker"
+  ],
+  "difficulty": "intermediate",
+  "risk": "caution",
+  "commonErrors": [],
+  "keywords": [
+   "compose",
+   "docker",
+   "down",
+   "remove",
+   "stop"
+  ],
+  "tags": [
+   "docker",
+   "compose",
+   "docker"
+  ],
+  "sources": [
+   "https://docs.docker.com/reference/cli/docker/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "docker-docker-logs",
+  "slug": "docker-logs",
+  "name": "docker logs",
+  "description": "View container output.",
+  "explanation": "Use to debug containers that exit immediately.",
+  "category": "docker",
+  "syntax": "docker logs [-f] [--tail <n>] <container>",
+  "examples": [
+   {
+    "command": "docker logs -f --tail 100 web",
+    "description": "Follow the last 100 lines."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows"
+  ],
+  "tools": [
+   "docker"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "container",
+   "debug",
+   "docker",
+   "logs",
+   "output"
+  ],
+  "tags": [
+   "docker",
+   "container",
+   "debug"
+  ],
+  "sources": [
+   "https://docs.docker.com/reference/cli/docker/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "docker-docker-exec",
+  "slug": "docker-exec",
+  "name": "docker exec",
+  "description": "Run a command in a running container.",
+  "explanation": "-it gives an interactive terminal. Changes made this way are lost when the container is recreated.",
+  "category": "docker",
+  "syntax": "docker exec -it <container> <cmd>",
+  "examples": [
+   {
+    "command": "docker exec -it web sh",
+    "description": "Open a shell inside the container."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows"
+  ],
+  "tools": [
+   "docker"
+  ],
+  "difficulty": "intermediate",
+  "risk": "caution",
+  "commonErrors": [],
+  "keywords": [
+   "bash",
+   "container",
+   "docker",
+   "enter",
+   "exec",
+   "shell"
+  ],
+  "tags": [
+   "docker",
+   "bash",
+   "container"
+  ],
+  "sources": [
+   "https://docs.docker.com/reference/cli/docker/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "docker-docker-system-prune",
+  "slug": "docker-system-prune",
+  "name": "docker system prune",
+  "description": "Remove unused containers, networks and images.",
+  "explanation": "-a removes all unused images and --volumes removes unused volumes (data loss). Read the confirmation prompt.",
+  "category": "docker",
+  "syntax": "docker system prune [-a] [--volumes]",
+  "examples": [
+   {
+    "command": "docker system prune",
+    "description": "Delete stopped containers and dangling images."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows"
+  ],
+  "tools": [
+   "docker"
+  ],
+  "difficulty": "intermediate",
+  "risk": "destructive",
+  "commonErrors": [],
+  "keywords": [
+   "clean",
+   "cleanup",
+   "disk",
+   "docker",
+   "prune",
+   "remove",
+   "system",
+   "unused"
+  ],
+  "tags": [
+   "docker",
+   "clean",
+   "cleanup"
+  ],
+  "sources": [
+   "https://docs.docker.com/reference/cli/docker/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ }
+]

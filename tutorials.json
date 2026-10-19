@@ -1,0 +1,100 @@
+[
+ {
+  "slug": "update-termux-packages",
+  "title": "Update Termux packages",
+  "summary": "Refresh package lists and upgrade everything before installing tools.",
+  "objective": "Bring a fresh Termux installation up to date so later installs do not fail.",
+  "prerequisites": ["Termux installed from F-Droid or the official GitHub releases", "An internet connection"],
+  "steps": [
+    {"title": "Update and upgrade", "command": "pkg update && pkg upgrade", "explanation": "pkg update refreshes the package index; pkg upgrade installs newer versions. Answer y to prompts, or add -y."},
+    {"title": "Pick a faster mirror if needed", "command": "termux-change-repo", "explanation": "Opens a menu to choose a mirror. Use it if downloads fail or are very slow."}
+  ],
+  "expectedResult": "The command finishes without errors and pkg list-installed shows current versions.",
+  "troubleshooting": [
+    {"problem": "unable to locate package", "fix": "Run termux-change-repo, choose a mirror, then pkg update again."},
+    {"problem": "Repository is under maintenance or down", "fix": "Switch mirrors with termux-change-repo."}
+  ],
+  "warnings": ["Termux is not a rooted Linux system: do not use sudo. Use pkg for Termux packages.", "Play Store builds of Termux are outdated; use F-Droid or the official GitHub releases."],
+  "docs": [{"label": "Termux Wiki", "url": "https://wiki.termux.com/wiki/Main_Page"}],
+  "lastReviewed": "2026-10-20"
+ },
+ {
+  "slug": "install-nodejs-termux",
+  "title": "Install Node.js and npm in Termux",
+  "summary": "Install Node.js, check versions, and run a first script.",
+  "objective": "Run JavaScript and use npm on your Android device.",
+  "prerequisites": ["Updated Termux packages (see the update tutorial)"],
+  "steps": [
+    {"title": "Install Node.js", "command": "pkg install nodejs-lts", "explanation": "Installs node and npm from the Termux repository (LTS variant)."},
+    {"title": "Check versions", "command": "node -v && npm -v", "explanation": "Confirms both tools are on your PATH."},
+    {"title": "Create and run a script", "command": "echo 'console.log(\"hello from Termux\")' > hello.js && node hello.js", "explanation": "Writes a one-line script and runs it."}
+  ],
+  "expectedResult": "Node prints hello from Termux.",
+  "troubleshooting": [
+    {"problem": "npm install fails building a native module", "fix": "Install build tools: pkg install build-essential python, then retry. Some modules do not support Android/ARM."},
+    {"problem": "EACCES errors", "fix": "Do not use sudo. Install packages inside your project folder in your home directory."}
+  ],
+  "warnings": ["Packaged Node versions can lag behind nodejs.org. Check node -v against your project's engines field."],
+  "docs": [{"label": "Node.js docs", "url": "https://nodejs.org/docs/latest/api/"}, {"label": "Termux Wiki", "url": "https://wiki.termux.com/wiki/Main_Page"}],
+  "lastReviewed": "2026-10-20"
+ },
+ {
+  "slug": "github-ssh-termux",
+  "title": "Use GitHub with SSH in Termux",
+  "summary": "Create an SSH key and connect Termux to GitHub.",
+  "objective": "Clone and push to GitHub without typing a password.",
+  "prerequisites": ["pkg install git openssh", "A GitHub account"],
+  "steps": [
+    {"title": "Install tools", "command": "pkg install git openssh", "explanation": "Provides git, ssh and ssh-keygen."},
+    {"title": "Generate a key", "command": "ssh-keygen -t ed25519 -C \"you@example.com\"", "explanation": "Creates ~/.ssh/id_ed25519 (private) and id_ed25519.pub (public). Set a passphrase."},
+    {"title": "Show the public key", "command": "cat ~/.ssh/id_ed25519.pub", "explanation": "Copy this output and add it under GitHub, Settings, SSH and GPG keys. Never share the file without .pub."},
+    {"title": "Test the connection", "command": "ssh -T git@github.com", "explanation": "Confirm the GitHub fingerprint on first use. GitHub should greet you by username."},
+    {"title": "Clone with SSH", "command": "git clone git@github.com:user/repo.git", "explanation": "Replace user/repo with your repository."}
+  ],
+  "expectedResult": "Cloning works without a password prompt.",
+  "troubleshooting": [
+    {"problem": "Permission denied (publickey)", "fix": "Check that the key was added to your GitHub account and run ssh -vT git@github.com to see which key is offered."}
+  ],
+  "warnings": ["Never paste your private key anywhere. Only the .pub file is shared."],
+  "docs": [{"label": "GitHub: connecting with SSH", "url": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh"}],
+  "lastReviewed": "2026-10-20"
+ },
+ {
+  "slug": "termux-shared-storage",
+  "title": "Access shared Android storage",
+  "summary": "Let Termux read and write Downloads and other shared folders.",
+  "objective": "Move files between Android apps and your Termux projects.",
+  "prerequisites": ["Termux installed"],
+  "steps": [
+    {"title": "Request permission", "command": "termux-setup-storage", "explanation": "Android shows a permission prompt. Allow it."},
+    {"title": "Inspect the links", "command": "ls ~/storage", "explanation": "You should see links such as downloads, dcim and shared."},
+    {"title": "Copy a file in", "command": "cp ~/storage/downloads/notes.txt ~/projects/", "explanation": "Copies from Downloads into a project folder."}
+  ],
+  "expectedResult": "Files in Downloads are visible in ~/storage/downloads.",
+  "troubleshooting": [
+    {"problem": "~/storage is empty or missing", "fix": "Re-run termux-setup-storage, or enable storage permission for Termux in Android app settings."}
+  ],
+  "warnings": ["Keep Git repositories in the Termux home directory. Shared storage does not support Unix permissions or symlinks properly and can break tools."],
+  "docs": [{"label": "Termux Storage", "url": "https://wiki.termux.com/wiki/Termux-setup-storage"}],
+  "lastReviewed": "2026-10-20"
+ },
+ {
+  "slug": "long-running-processes-termux",
+  "title": "Run long-running processes in Termux",
+  "summary": "Keep a dev server alive and understand Android's background limits.",
+  "objective": "Run a server in the background and reduce the chance Android stops it.",
+  "prerequisites": ["A Node.js or Python app to run"],
+  "steps": [
+    {"title": "Acquire a wake lock", "command": "termux-wake-lock", "explanation": "Asks Android to keep Termux awake. Release with termux-wake-unlock."},
+    {"title": "Start the server in the background", "command": "node server.js > server.log 2>&1 &", "explanation": "& runs it in the background; output goes to server.log."},
+    {"title": "Check and stop it", "command": "jobs; tail -f server.log", "explanation": "jobs lists background jobs. Stop one with kill %1."}
+  ],
+  "expectedResult": "The server responds on localhost while Termux is running.",
+  "troubleshooting": [
+    {"problem": "Process killed when the screen is off", "fix": "Disable battery optimization for Termux in Android settings. Vendor behavior varies and cannot be guaranteed."}
+  ],
+  "warnings": ["Android may stop background apps at any time. Do not rely on Termux for production hosting."],
+  "docs": [{"label": "Termux Wiki", "url": "https://wiki.termux.com/wiki/Main_Page"}],
+  "lastReviewed": "2026-10-20"
+ }
+]

@@ -1,0 +1,11 @@
+[
+ {"slug":"git","name":"Git & GitHub","description":"Version control: commits, branches, remotes, and undoing mistakes safely."},
+ {"slug":"linux","name":"Linux & Bash","description":"Everyday shell commands for files, processes, disks, and text."},
+ {"slug":"termux","name":"Android & Termux","description":"Commands specific to the Termux terminal environment on Android."},
+ {"slug":"nodejs","name":"Node.js","description":"Running and configuring Node.js programs."},
+ {"slug":"npm","name":"npm","description":"Dependencies, scripts, and the npm registry."},
+ {"slug":"python","name":"Python & pip","description":"Virtual environments, packages, and quick local tools."},
+ {"slug":"docker","name":"Docker","description":"Images, containers, and Compose."},
+ {"slug":"ssh","name":"SSH & Transfer","description":"Remote access, keys, tunnels, and file transfer."},
+ {"slug":"deployment","name":"Deployment & VPS","description":"Nginx, systemd, PM2, TLS, firewalls, and release steps."}
+]

@@ -1,0 +1,648 @@
+[
+ {
+  "id": "git-git-undo-last-commit",
+  "slug": "git-undo-last-commit",
+  "name": "git reset --soft HEAD~1",
+  "description": "Undo the last commit but keep your changes staged.",
+  "explanation": "--soft moves the branch pointer back one commit (HEAD~1) without touching the index or working tree. Do not use it on commits already pushed and shared unless you plan to force-push.",
+  "category": "git",
+  "syntax": "git reset --soft HEAD~1",
+  "examples": [
+   {
+    "command": "git reset --soft HEAD~1",
+    "description": "Undo the newest commit; files stay staged."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "git"
+  ],
+  "difficulty": "beginner",
+  "risk": "caution",
+  "commonErrors": [],
+  "keywords": [
+   "1",
+   "commit",
+   "git",
+   "head",
+   "last",
+   "mistake",
+   "reset",
+   "revert",
+   "soft",
+   "uncommit",
+   "undo"
+  ],
+  "tags": [
+   "git",
+   "1",
+   "commit"
+  ],
+  "sources": [
+   "https://git-scm.com/docs"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": true
+ },
+ {
+  "id": "git-git-clone",
+  "slug": "git-clone",
+  "name": "git clone",
+  "description": "Copy a remote repository to your machine.",
+  "explanation": "Creates a directory, fetches all history, and checks out the default branch. --depth 1 fetches only the latest snapshot, which is faster on slow connections.",
+  "category": "git",
+  "syntax": "git clone [--branch <name>] [--depth <n>] <url> [directory]",
+  "examples": [
+   {
+    "command": "git clone https://github.com/user/repo.git",
+    "description": "Clone into ./repo."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "git"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [
+   {
+    "message": "fatal: repository not found",
+    "fix": "Check the URL and your access rights; private repos need credentials or an SSH key."
+   }
+  ],
+  "keywords": [
+   "clone",
+   "copy",
+   "download",
+   "git",
+   "github",
+   "repo",
+   "repository"
+  ],
+  "tags": [
+   "git",
+   "clone",
+   "copy"
+  ],
+  "sources": [
+   "https://git-scm.com/docs"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": true
+ },
+ {
+  "id": "git-git-status",
+  "slug": "git-status",
+  "name": "git status",
+  "description": "Show changed, staged, and untracked files.",
+  "explanation": "Compares the working tree to the index and HEAD. Run it before every commit.",
+  "category": "git",
+  "syntax": "git status [-s]",
+  "examples": [
+   {
+    "command": "git status -s",
+    "description": "Short format output."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "git"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "changes",
+   "git",
+   "staged",
+   "status",
+   "untracked"
+  ],
+  "tags": [
+   "git",
+   "changes",
+   "git"
+  ],
+  "sources": [
+   "https://git-scm.com/docs"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "git-git-add",
+  "slug": "git-add",
+  "name": "git add",
+  "description": "Stage changes for the next commit.",
+  "explanation": "-p lets you review each hunk. git add . stages everything under the current directory, so check git status first to avoid staging secrets.",
+  "category": "git",
+  "syntax": "git add <path>... | git add -p",
+  "examples": [
+   {
+    "command": "git add -p",
+    "description": "Stage changes interactively, hunk by hunk."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "git"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "add",
+   "git",
+   "index",
+   "stage"
+  ],
+  "tags": [
+   "git",
+   "add",
+   "git"
+  ],
+  "sources": [
+   "https://git-scm.com/docs"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "git-git-commit",
+  "slug": "git-commit",
+  "name": "git commit",
+  "description": "Record staged changes as a commit.",
+  "explanation": "Creates a commit from the index. Use present-tense, specific messages. --amend rewrites the last commit.",
+  "category": "git",
+  "syntax": "git commit -m \"<message>\"",
+  "examples": [
+   {
+    "command": "git commit -m \"Fix login redirect\"",
+    "description": "Commit with an inline message."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "git"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "commit",
+   "git",
+   "message",
+   "save",
+   "snapshot"
+  ],
+  "tags": [
+   "git",
+   "commit",
+   "git"
+  ],
+  "sources": [
+   "https://git-scm.com/docs"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "git-git-branch-create",
+  "slug": "git-branch-create",
+  "name": "git switch -c",
+  "description": "Create and switch to a new branch.",
+  "explanation": "git switch is the modern replacement for the branch-switching use of git checkout. Requires Git 2.23 or newer.",
+  "category": "git",
+  "syntax": "git switch -c <branch> [<start-point>]",
+  "examples": [
+   {
+    "command": "git switch -c feature/search",
+    "description": "Create feature/search from the current commit."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "git"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "branch",
+   "c",
+   "checkout",
+   "create",
+   "git",
+   "new",
+   "switch"
+  ],
+  "tags": [
+   "git",
+   "branch",
+   "c"
+  ],
+  "sources": [
+   "https://git-scm.com/docs"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "git-git-stash",
+  "slug": "git-stash",
+  "name": "git stash",
+  "description": "Temporarily shelve uncommitted changes.",
+  "explanation": "Restore with git stash pop. -u includes untracked files. Stashes are local only; do not rely on them as backups.",
+  "category": "git",
+  "syntax": "git stash push [-u] [-m <msg>]",
+  "examples": [
+   {
+    "command": "git stash push -u -m \"wip search\"",
+    "description": "Stash tracked and untracked files."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "git"
+  ],
+  "difficulty": "intermediate",
+  "risk": "caution",
+  "commonErrors": [],
+  "keywords": [
+   "changes",
+   "git",
+   "save",
+   "shelve",
+   "stash",
+   "wip"
+  ],
+  "tags": [
+   "git",
+   "changes",
+   "git"
+  ],
+  "sources": [
+   "https://git-scm.com/docs"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "git-git-log-oneline",
+  "slug": "git-log-oneline",
+  "name": "git log --oneline",
+  "description": "Compact commit history.",
+  "explanation": "Prints one line per commit with abbreviated hash and subject.",
+  "category": "git",
+  "syntax": "git log --oneline [--graph] [-n <count>]",
+  "examples": [
+   {
+    "command": "git log --oneline --graph -n 15",
+    "description": "Last 15 commits with branch graph."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "git"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "commits",
+   "git",
+   "graph",
+   "history",
+   "log",
+   "oneline"
+  ],
+  "tags": [
+   "git",
+   "commits",
+   "git"
+  ],
+  "sources": [
+   "https://git-scm.com/docs"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "git-git-restore",
+  "slug": "git-restore",
+  "name": "git restore",
+  "description": "Discard changes in a file or unstage it.",
+  "explanation": "Without --staged, restore overwrites the working copy with the index version. Those edits cannot be recovered by Git.",
+  "category": "git",
+  "syntax": "git restore [--staged] <path>",
+  "examples": [
+   {
+    "command": "git restore --staged src/app.ts",
+    "description": "Unstage a file, keeping your edits."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "git"
+  ],
+  "difficulty": "intermediate",
+  "risk": "destructive",
+  "commonErrors": [],
+  "keywords": [
+   "discard",
+   "file",
+   "git",
+   "restore",
+   "revert",
+   "unstage"
+  ],
+  "tags": [
+   "git",
+   "discard",
+   "file"
+  ],
+  "sources": [
+   "https://git-scm.com/docs"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "git-git-reset-hard",
+  "slug": "git-reset-hard",
+  "name": "git reset --hard",
+  "description": "Move the branch and discard all uncommitted changes.",
+  "explanation": "Permanently deletes uncommitted work in tracked files. Commits dropped by the reset can often be found with git reflog for a limited time.",
+  "category": "git",
+  "syntax": "git reset --hard <commit>",
+  "examples": [
+   {
+    "command": "git reset --hard origin/main",
+    "description": "Make your branch identical to origin/main."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "git"
+  ],
+  "difficulty": "advanced",
+  "risk": "destructive",
+  "commonErrors": [],
+  "keywords": [
+   "destroy",
+   "discard",
+   "force",
+   "git",
+   "hard",
+   "reset",
+   "sync"
+  ],
+  "tags": [
+   "git",
+   "destroy",
+   "discard"
+  ],
+  "sources": [
+   "https://git-scm.com/docs"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "git-git-push-force-with-lease",
+  "slug": "git-push-force-with-lease",
+  "name": "git push --force-with-lease",
+  "description": "Force-push only if the remote has not changed unexpectedly.",
+  "explanation": "Overwrites remote history. Unlike --force it refuses if someone else pushed since your last fetch. Never use on shared branches such as main.",
+  "category": "git",
+  "syntax": "git push --force-with-lease [<remote> <branch>]",
+  "examples": [
+   {
+    "command": "git push --force-with-lease origin feature/search",
+    "description": "Safer force push after a rebase."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "git"
+  ],
+  "difficulty": "advanced",
+  "risk": "destructive",
+  "commonErrors": [
+   {
+    "message": "! [rejected] (stale info)",
+    "fix": "Someone pushed since your last fetch. Run git fetch, review the remote changes, then retry."
+   }
+  ],
+  "keywords": [
+   "force",
+   "git",
+   "history",
+   "lease",
+   "push",
+   "rebase",
+   "rewrite",
+   "with"
+  ],
+  "tags": [
+   "git",
+   "force",
+   "git"
+  ],
+  "sources": [
+   "https://git-scm.com/docs"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "git-git-remote-add",
+  "slug": "git-remote-add",
+  "name": "git remote add",
+  "description": "Register a remote repository.",
+  "explanation": "Names the remote so you can push and pull. Verify with git remote -v.",
+  "category": "git",
+  "syntax": "git remote add <name> <url>",
+  "examples": [
+   {
+    "command": "git remote add origin git@github.com:user/repo.git",
+    "description": "Add origin using SSH."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "git"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "add",
+   "git",
+   "github",
+   "origin",
+   "remote",
+   "upstream"
+  ],
+  "tags": [
+   "git",
+   "add",
+   "git"
+  ],
+  "sources": [
+   "https://git-scm.com/docs"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "git-git-pull-rebase",
+  "slug": "git-pull-rebase",
+  "name": "git pull --rebase",
+  "description": "Fetch and replay your commits on top of the remote branch.",
+  "explanation": "Keeps history linear. Resolve conflicts, git add the files, then git rebase --continue.",
+  "category": "git",
+  "syntax": "git pull --rebase [<remote> <branch>]",
+  "examples": [
+   {
+    "command": "git pull --rebase origin main",
+    "description": "Update your branch without a merge commit."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "git"
+  ],
+  "difficulty": "intermediate",
+  "risk": "caution",
+  "commonErrors": [],
+  "keywords": [
+   "git",
+   "linear",
+   "pull",
+   "rebase",
+   "sync",
+   "update"
+  ],
+  "tags": [
+   "git",
+   "git",
+   "linear"
+  ],
+  "sources": [
+   "https://git-scm.com/docs"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "git-git-revert",
+  "slug": "git-revert",
+  "name": "git revert",
+  "description": "Create a new commit that undoes a previous one.",
+  "explanation": "Unlike reset, revert adds history instead of rewriting it, so it is safe for commits that were already pushed.",
+  "category": "git",
+  "syntax": "git revert <commit>",
+  "examples": [
+   {
+    "command": "git revert HEAD",
+    "description": "Undo the latest commit safely."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "git"
+  ],
+  "difficulty": "intermediate",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "commit",
+   "git",
+   "pushed",
+   "revert",
+   "safe",
+   "undo"
+  ],
+  "tags": [
+   "git",
+   "commit",
+   "git"
+  ],
+  "sources": [
+   "https://git-scm.com/docs"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ }
+]

@@ -1,0 +1,363 @@
+[
+ {
+  "id": "npm-npm-init-y",
+  "slug": "npm-init-y",
+  "name": "npm init -y",
+  "description": "Create package.json with defaults.",
+  "explanation": "Edit name, version and scripts afterwards.",
+  "category": "npm",
+  "syntax": "npm init -y",
+  "examples": [
+   {
+    "command": "npm init -y",
+    "description": "Generate package.json."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "npm"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "init",
+   "json",
+   "new",
+   "npm",
+   "package",
+   "project",
+   "y"
+  ],
+  "tags": [
+   "npm",
+   "init",
+   "json"
+  ],
+  "sources": [
+   "https://docs.npmjs.com/cli/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": true
+ },
+ {
+  "id": "npm-npm-install",
+  "slug": "npm-install",
+  "name": "npm install",
+  "description": "Install dependencies.",
+  "explanation": "With no arguments installs everything in package.json. Never use sudo npm install.",
+  "category": "npm",
+  "syntax": "npm install [<package>...]",
+  "examples": [
+   {
+    "command": "npm install express",
+    "description": "Add express and save it to dependencies."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "npm"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [
+   {
+    "message": "EACCES: permission denied",
+    "fix": "Do not use sudo. Fix directory ownership or use a Node version manager."
+   }
+  ],
+  "keywords": [
+   "dependencies",
+   "install",
+   "npm",
+   "packages"
+  ],
+  "tags": [
+   "npm",
+   "dependencies",
+   "install"
+  ],
+  "sources": [
+   "https://docs.npmjs.com/cli/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "npm-npm-install-dev",
+  "slug": "npm-install-dev",
+  "name": "npm install -D",
+  "description": "Install a development-only dependency.",
+  "explanation": "Dev dependencies are skipped with npm install --omit=dev.",
+  "category": "npm",
+  "syntax": "npm install -D <package>",
+  "examples": [
+   {
+    "command": "npm install -D typescript",
+    "description": "Add TypeScript as a devDependency."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "npm"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "d",
+   "dependency",
+   "dev",
+   "devdependencies",
+   "install",
+   "npm"
+  ],
+  "tags": [
+   "npm",
+   "d",
+   "dependency"
+  ],
+  "sources": [
+   "https://docs.npmjs.com/cli/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "npm-npm-run",
+  "slug": "npm-run",
+  "name": "npm run",
+  "description": "Run a script from package.json.",
+  "explanation": "Lists scripts if none is given. Arguments after -- go to the script.",
+  "category": "npm",
+  "syntax": "npm run <script>",
+  "examples": [
+   {
+    "command": "npm run build",
+    "description": "Run the build script."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "npm"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "build",
+   "npm",
+   "run",
+   "script",
+   "start",
+   "test"
+  ],
+  "tags": [
+   "npm",
+   "build",
+   "npm"
+  ],
+  "sources": [
+   "https://docs.npmjs.com/cli/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "npm-npm-ci",
+  "slug": "npm-ci",
+  "name": "npm ci",
+  "description": "Clean, reproducible install from the lockfile.",
+  "explanation": "Deletes node_modules first and fails if lockfile and package.json disagree. Use in CI.",
+  "category": "npm",
+  "syntax": "npm ci",
+  "examples": [
+   {
+    "command": "npm ci",
+    "description": "Install exactly what package-lock.json says."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "npm"
+  ],
+  "difficulty": "intermediate",
+  "risk": "caution",
+  "commonErrors": [],
+  "keywords": [
+   "ci",
+   "clean",
+   "install",
+   "lockfile",
+   "npm",
+   "reproducible"
+  ],
+  "tags": [
+   "npm",
+   "ci",
+   "clean"
+  ],
+  "sources": [
+   "https://docs.npmjs.com/cli/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "npm-npm-audit",
+  "slug": "npm-audit",
+  "name": "npm audit",
+  "description": "Check dependencies for known vulnerabilities.",
+  "explanation": "npm audit fix may upgrade packages; review changes before committing.",
+  "category": "npm",
+  "syntax": "npm audit [--omit=dev]",
+  "examples": [
+   {
+    "command": "npm audit",
+    "description": "Report known issues."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "npm"
+  ],
+  "difficulty": "intermediate",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "audit",
+   "npm",
+   "security",
+   "vulnerabilities"
+  ],
+  "tags": [
+   "npm",
+   "audit",
+   "npm"
+  ],
+  "sources": [
+   "https://docs.npmjs.com/cli/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "npm-npm-ls",
+  "slug": "npm-ls",
+  "name": "npm ls",
+  "description": "Show the dependency tree.",
+  "explanation": "Find out why a package is installed.",
+  "category": "npm",
+  "syntax": "npm ls [<package>] [--depth=<n>]",
+  "examples": [
+   {
+    "command": "npm ls --depth=0",
+    "description": "List top-level dependencies."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "npm"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "dependencies",
+   "list",
+   "ls",
+   "npm",
+   "tree",
+   "version"
+  ],
+  "tags": [
+   "npm",
+   "dependencies",
+   "list"
+  ],
+  "sources": [
+   "https://docs.npmjs.com/cli/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "npm-npm-uninstall",
+  "slug": "npm-uninstall",
+  "name": "npm uninstall",
+  "description": "Remove a dependency.",
+  "explanation": "Updates package.json and the lockfile.",
+  "category": "npm",
+  "syntax": "npm uninstall <package>",
+  "examples": [
+   {
+    "command": "npm uninstall lodash",
+    "description": "Remove lodash."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "npm"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "delete",
+   "dependency",
+   "npm",
+   "remove",
+   "uninstall"
+  ],
+  "tags": [
+   "npm",
+   "delete",
+   "dependency"
+  ],
+  "sources": [
+   "https://docs.npmjs.com/cli/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ }
+]

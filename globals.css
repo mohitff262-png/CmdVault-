@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+body { @apply bg-vault-bg text-vault-text antialiased font-sans; }
+:focus-visible { outline: 2px solid #8b7cf6; outline-offset: 2px; }
+mark { @apply rounded-sm bg-vault-accent/25 text-vault-text; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }

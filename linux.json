@@ -1,0 +1,535 @@
+[
+ {
+  "id": "linux-find-port-process",
+  "slug": "find-port-process",
+  "name": "lsof -i :PORT",
+  "description": "Find which process is listening on a port.",
+  "explanation": "Lists processes with open network sockets on that port. On Linux, ss -ltnp is an alternative that is usually preinstalled. You may need elevated privileges to see other users' processes.",
+  "category": "linux",
+  "syntax": "lsof -i :<port>  |  ss -ltnp | grep :<port>",
+  "examples": [
+   {
+    "command": "lsof -i :3000",
+    "description": "Show the process using port 3000."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos"
+  ],
+  "tools": [
+   "bash"
+  ],
+  "difficulty": "intermediate",
+  "risk": "safe",
+  "commonErrors": [
+   {
+    "message": "lsof: command not found",
+    "fix": "Use ss -ltnp | grep :3000 instead, or install lsof with your package manager."
+   }
+  ],
+  "keywords": [
+   "address",
+   "eaddrinuse",
+   "i",
+   "in",
+   "listening",
+   "lsof",
+   "port",
+   "process",
+   "ss",
+   "use"
+  ],
+  "tags": [
+   "linux",
+   "address",
+   "eaddrinuse"
+  ],
+  "sources": [
+   "https://www.gnu.org/software/coreutils/manual/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": true
+ },
+ {
+  "id": "linux-ls",
+  "slug": "ls",
+  "name": "ls",
+  "description": "List directory contents.",
+  "explanation": "-l long listing, -a include dotfiles, -h readable sizes.",
+  "category": "linux",
+  "syntax": "ls [-lah] [path]",
+  "examples": [
+   {
+    "command": "ls -lah",
+    "description": "Long format, hidden files, human-readable sizes."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "termux"
+  ],
+  "tools": [
+   "bash"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "directory",
+   "files",
+   "list",
+   "ls"
+  ],
+  "tags": [
+   "linux",
+   "directory",
+   "files"
+  ],
+  "sources": [
+   "https://www.gnu.org/software/coreutils/manual/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "linux-chmod",
+  "slug": "chmod",
+  "name": "chmod",
+  "description": "Change file permissions.",
+  "explanation": "Prefer targeted modes like u+x over 777, which lets everyone write to the file.",
+  "category": "linux",
+  "syntax": "chmod <mode> <file>",
+  "examples": [
+   {
+    "command": "chmod +x script.sh",
+    "description": "Make a script executable."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "termux"
+  ],
+  "tools": [
+   "bash"
+  ],
+  "difficulty": "intermediate",
+  "risk": "caution",
+  "commonErrors": [],
+  "keywords": [
+   "chmod",
+   "executable",
+   "mode",
+   "permissions"
+  ],
+  "tags": [
+   "linux",
+   "chmod",
+   "executable"
+  ],
+  "sources": [
+   "https://www.gnu.org/software/coreutils/manual/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "linux-grep",
+  "slug": "grep",
+  "name": "grep",
+  "description": "Search text using patterns.",
+  "explanation": "-r recurse, -n line numbers, -I ignore binaries. Add -i for case-insensitive.",
+  "category": "linux",
+  "syntax": "grep [-rnI] <pattern> [path]",
+  "examples": [
+   {
+    "command": "grep -rnI \"TODO\" src/",
+    "description": "Recursive search with line numbers, skipping binary files."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "termux"
+  ],
+  "tools": [
+   "bash"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "find",
+   "grep",
+   "search",
+   "string",
+   "text"
+  ],
+  "tags": [
+   "linux",
+   "find",
+   "grep"
+  ],
+  "sources": [
+   "https://www.gnu.org/software/coreutils/manual/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "linux-find",
+  "slug": "find",
+  "name": "find",
+  "description": "Locate files by name, type, or age.",
+  "explanation": "Quote globs so the shell does not expand them first. Avoid -delete until you have reviewed the matches.",
+  "category": "linux",
+  "syntax": "find <path> -name \"<glob>\" [-type f]",
+  "examples": [
+   {
+    "command": "find . -name \"*.log\" -type f",
+    "description": "Find all .log files below the current directory."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "termux"
+  ],
+  "tools": [
+   "bash"
+  ],
+  "difficulty": "intermediate",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "files",
+   "find",
+   "locate",
+   "name",
+   "search"
+  ],
+  "tags": [
+   "linux",
+   "files",
+   "find"
+  ],
+  "sources": [
+   "https://www.gnu.org/software/coreutils/manual/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "linux-tar-create",
+  "slug": "tar-create",
+  "name": "tar -czf",
+  "description": "Create a compressed archive.",
+  "explanation": "-c create, -z gzip, -f filename. Extract with tar -xzf.",
+  "category": "linux",
+  "syntax": "tar -czf <archive.tar.gz> <path>...",
+  "examples": [
+   {
+    "command": "tar -czf backup.tar.gz src/ package.json",
+    "description": "Archive source and package.json."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "termux"
+  ],
+  "tools": [
+   "bash"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "archive",
+   "backup",
+   "compress",
+   "czf",
+   "tar",
+   "zip"
+  ],
+  "tags": [
+   "linux",
+   "archive",
+   "backup"
+  ],
+  "sources": [
+   "https://www.gnu.org/software/coreutils/manual/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "linux-df",
+  "slug": "df",
+  "name": "df -h",
+  "description": "Show free disk space.",
+  "explanation": "Use du -sh * to find what is using the space.",
+  "category": "linux",
+  "syntax": "df -h [path]",
+  "examples": [
+   {
+    "command": "df -h",
+    "description": "Disk usage per filesystem."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "termux"
+  ],
+  "tools": [
+   "bash"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "df",
+   "disk",
+   "free",
+   "full",
+   "h",
+   "space",
+   "storage"
+  ],
+  "tags": [
+   "linux",
+   "df",
+   "disk"
+  ],
+  "sources": [
+   "https://www.gnu.org/software/coreutils/manual/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "linux-du",
+  "slug": "du",
+  "name": "du -sh",
+  "description": "Summarize disk usage of paths.",
+  "explanation": "-s summary, -h human-readable.",
+  "category": "linux",
+  "syntax": "du -sh <path>...",
+  "examples": [
+   {
+    "command": "du -sh * | sort -h",
+    "description": "Size of each item, sorted."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "termux"
+  ],
+  "tools": [
+   "bash"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "disk",
+   "du",
+   "folder",
+   "large",
+   "sh",
+   "size",
+   "usage"
+  ],
+  "tags": [
+   "linux",
+   "disk",
+   "du"
+  ],
+  "sources": [
+   "https://www.gnu.org/software/coreutils/manual/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "linux-kill",
+  "slug": "kill",
+  "name": "kill",
+  "description": "Send a signal to a process.",
+  "explanation": "Default SIGTERM lets the process clean up. Use -9 (SIGKILL) only if it ignores SIGTERM; it cannot save state.",
+  "category": "linux",
+  "syntax": "kill [-15|-9] <pid>",
+  "examples": [
+   {
+    "command": "kill 12345",
+    "description": "Ask process 12345 to terminate."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "termux"
+  ],
+  "tools": [
+   "bash"
+  ],
+  "difficulty": "intermediate",
+  "risk": "caution",
+  "commonErrors": [],
+  "keywords": [
+   "kill",
+   "pid",
+   "process",
+   "stop",
+   "terminate"
+  ],
+  "tags": [
+   "linux",
+   "kill",
+   "pid"
+  ],
+  "sources": [
+   "https://www.gnu.org/software/coreutils/manual/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "linux-tail-follow",
+  "slug": "tail-follow",
+  "name": "tail -f",
+  "description": "Stream new lines added to a file.",
+  "explanation": "Press Ctrl+C to stop. -n sets how many existing lines to show first.",
+  "category": "linux",
+  "syntax": "tail -f <file>",
+  "examples": [
+   {
+    "command": "tail -f /var/log/nginx/error.log",
+    "description": "Watch the nginx error log live."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "termux"
+  ],
+  "tools": [
+   "bash"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "f",
+   "follow",
+   "live",
+   "log",
+   "tail",
+   "watch"
+  ],
+  "tags": [
+   "linux",
+   "f",
+   "follow"
+  ],
+  "sources": [
+   "https://www.gnu.org/software/coreutils/manual/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "linux-curl",
+  "slug": "curl",
+  "name": "curl",
+  "description": "Make HTTP requests from the terminal.",
+  "explanation": "Never pipe curl output straight into a shell unless you trust and have read the script.",
+  "category": "linux",
+  "syntax": "curl [-fsSL] [-X <method>] <url>",
+  "examples": [
+   {
+    "command": "curl -fsSL https://example.com/health",
+    "description": "Fail on HTTP errors, silent, follow redirects."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "bash"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "api",
+   "curl",
+   "download",
+   "http",
+   "request",
+   "test"
+  ],
+  "tags": [
+   "linux",
+   "api",
+   "curl"
+  ],
+  "sources": [
+   "https://www.gnu.org/software/coreutils/manual/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "linux-rm-recursive",
+  "slug": "rm-recursive",
+  "name": "rm -r",
+  "description": "Delete files and directories.",
+  "explanation": "Deletion is permanent; there is no trash. Double-check the path and avoid variables that may be empty. -i prompts before each removal.",
+  "category": "linux",
+  "syntax": "rm -r <path>",
+  "examples": [
+   {
+    "command": "rm -ri build/",
+    "description": "Delete build/ and confirm each item."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "termux"
+  ],
+  "tools": [
+   "bash"
+  ],
+  "difficulty": "advanced",
+  "risk": "destructive",
+  "commonErrors": [],
+  "keywords": [
+   "delete",
+   "destroy",
+   "directory",
+   "r",
+   "remove",
+   "rf",
+   "rm"
+  ],
+  "tags": [
+   "linux",
+   "delete",
+   "destroy"
+  ],
+  "sources": [
+   "https://www.gnu.org/software/coreutils/manual/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ }
+]

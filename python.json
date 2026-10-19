@@ -1,0 +1,280 @@
+[
+ {
+  "id": "python-python-venv-create",
+  "slug": "python-venv-create",
+  "name": "python3 -m venv",
+  "description": "Create an isolated Python environment.",
+  "explanation": "Keeps project packages separate from the system. Add .venv to .gitignore. On Windows use py -m venv .venv.",
+  "category": "python",
+  "syntax": "python3 -m venv <dir>",
+  "examples": [
+   {
+    "command": "python3 -m venv .venv",
+    "description": "Create .venv in the current folder."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "python",
+   "pip"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [
+   {
+    "message": "No module named venv",
+    "fix": "On Debian/Ubuntu install the python3-venv package."
+   }
+  ],
+  "keywords": [
+   "create",
+   "environment",
+   "isolate",
+   "m",
+   "python",
+   "python3",
+   "venv",
+   "virtual"
+  ],
+  "tags": [
+   "python",
+   "create",
+   "environment"
+  ],
+  "sources": [
+   "https://docs.python.org/3/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": true
+ },
+ {
+  "id": "python-python-venv-activate",
+  "slug": "python-venv-activate",
+  "name": "source .venv/bin/activate",
+  "description": "Activate a virtual environment.",
+  "explanation": "Windows: .venv\\Scripts\\activate (cmd) or .venv\\Scripts\\Activate.ps1 (PowerShell). Leave with deactivate.",
+  "category": "python",
+  "syntax": "source <dir>/bin/activate",
+  "examples": [
+   {
+    "command": "source .venv/bin/activate",
+    "description": "Activate on Linux, macOS or Termux."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "termux"
+  ],
+  "tools": [
+   "python",
+   "pip"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "activate",
+   "bin",
+   "environment",
+   "source",
+   "venv",
+   "virtual"
+  ],
+  "tags": [
+   "python",
+   "activate",
+   "bin"
+  ],
+  "sources": [
+   "https://docs.python.org/3/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "python-pip-install",
+  "slug": "pip-install",
+  "name": "pip install",
+  "description": "Install a Python package.",
+  "explanation": "If you see externally-managed-environment, create and activate a venv instead of forcing --break-system-packages.",
+  "category": "python",
+  "syntax": "pip install <package>",
+  "examples": [
+   {
+    "command": "pip install requests",
+    "description": "Install requests into the active environment."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "python",
+   "pip"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "install",
+   "package",
+   "pip",
+   "python"
+  ],
+  "tags": [
+   "python",
+   "install",
+   "package"
+  ],
+  "sources": [
+   "https://docs.python.org/3/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "python-pip-freeze",
+  "slug": "pip-freeze",
+  "name": "pip freeze",
+  "description": "Print installed packages with versions.",
+  "explanation": "Includes transitive dependencies. Run it inside the venv.",
+  "category": "python",
+  "syntax": "pip freeze > requirements.txt",
+  "examples": [
+   {
+    "command": "pip freeze > requirements.txt",
+    "description": "Save the environment."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "python",
+   "pip"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "export",
+   "freeze",
+   "pip",
+   "requirements"
+  ],
+  "tags": [
+   "python",
+   "export",
+   "freeze"
+  ],
+  "sources": [
+   "https://docs.python.org/3/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "python-pip-install-requirements",
+  "slug": "pip-install-requirements",
+  "name": "pip install -r",
+  "description": "Install from a requirements file.",
+  "explanation": "Run inside an activated venv.",
+  "category": "python",
+  "syntax": "pip install -r requirements.txt",
+  "examples": [
+   {
+    "command": "pip install -r requirements.txt",
+    "description": "Install all pinned packages."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "python",
+   "pip"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "file",
+   "install",
+   "pip",
+   "r",
+   "requirements"
+  ],
+  "tags": [
+   "python",
+   "file",
+   "install"
+  ],
+  "sources": [
+   "https://docs.python.org/3/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "python-python-http-server",
+  "slug": "python-http-server",
+  "name": "python3 -m http.server",
+  "description": "Serve the current directory over HTTP.",
+  "explanation": "For local testing only. It lists every file in the folder and has no access control.",
+  "category": "python",
+  "syntax": "python3 -m http.server [<port>]",
+  "examples": [
+   {
+    "command": "python3 -m http.server 8000",
+    "description": "Serve on port 8000."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "python",
+   "pip"
+  ],
+  "difficulty": "beginner",
+  "risk": "caution",
+  "commonErrors": [],
+  "keywords": [
+   "files",
+   "http",
+   "local",
+   "m",
+   "python3",
+   "server",
+   "static"
+  ],
+  "tags": [
+   "python",
+   "files",
+   "http"
+  ],
+  "sources": [
+   "https://docs.python.org/3/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ }
+]

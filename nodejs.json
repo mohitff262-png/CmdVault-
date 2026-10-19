@@ -1,0 +1,224 @@
+[
+ {
+  "id": "nodejs-node-run",
+  "slug": "node-run",
+  "name": "node",
+  "description": "Run a JavaScript file with Node.js.",
+  "explanation": "Runs until the process exits. Press Ctrl+C to stop a server.",
+  "category": "nodejs",
+  "syntax": "node <file.js> [args]",
+  "examples": [
+   {
+    "command": "node server.js",
+    "description": "Run server.js."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "node"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [
+   {
+    "message": "Error: Cannot find module",
+    "fix": "Run the command from the project folder and run npm install first."
+   }
+  ],
+  "keywords": [
+   "javascript",
+   "node",
+   "run",
+   "script",
+   "start"
+  ],
+  "tags": [
+   "nodejs",
+   "javascript",
+   "node"
+  ],
+  "sources": [
+   "https://nodejs.org/docs/latest/api/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "nodejs-node-version",
+  "slug": "node-version",
+  "name": "node --version",
+  "description": "Print the installed Node.js version.",
+  "explanation": "Compare against engines in package.json.",
+  "category": "nodejs",
+  "syntax": "node -v",
+  "examples": [
+   {
+    "command": "node -v",
+    "description": "Show the version."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "node"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "check",
+   "node",
+   "version"
+  ],
+  "tags": [
+   "nodejs",
+   "check",
+   "node"
+  ],
+  "sources": [
+   "https://nodejs.org/docs/latest/api/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "nodejs-node-watch",
+  "slug": "node-watch",
+  "name": "node --watch",
+  "description": "Restart automatically when files change.",
+  "explanation": "Built in from Node 18.11 (stable in 22). Use a tool like nodemon on older versions.",
+  "category": "nodejs",
+  "syntax": "node --watch <file.js>",
+  "examples": [
+   {
+    "command": "node --watch server.js",
+    "description": "Auto-restart in development."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "node"
+  ],
+  "difficulty": "intermediate",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "dev",
+   "node",
+   "reload",
+   "restart",
+   "watch"
+  ],
+  "tags": [
+   "nodejs",
+   "dev",
+   "node"
+  ],
+  "sources": [
+   "https://nodejs.org/docs/latest/api/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "nodejs-node-env-port",
+  "slug": "node-env-port",
+  "name": "PORT=3000 node",
+  "description": "Pass an environment variable to a Node process.",
+  "explanation": "Read it with process.env.PORT. Do not put secrets in shell history; use a .env file loaded by your tooling.",
+  "category": "nodejs",
+  "syntax": "PORT=<n> node <file.js>",
+  "examples": [
+   {
+    "command": "PORT=8080 node server.js",
+    "description": "Start on port 8080."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "termux"
+  ],
+  "tools": [
+   "node"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "3000",
+   "env",
+   "environment",
+   "node",
+   "port",
+   "variable"
+  ],
+  "tags": [
+   "nodejs",
+   "3000",
+   "env"
+  ],
+  "sources": [
+   "https://nodejs.org/docs/latest/api/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "nodejs-npx-run",
+  "slug": "npx-run",
+  "name": "npx",
+  "description": "Run a package binary without installing globally.",
+  "explanation": "Downloads and executes code from the npm registry. Check package names to avoid typosquatting.",
+  "category": "nodejs",
+  "syntax": "npx <package> [args]",
+  "examples": [
+   {
+    "command": "npx create-next-app@latest",
+    "description": "Scaffold a Next.js app."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos",
+   "windows",
+   "termux"
+  ],
+  "tools": [
+   "node"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "npx",
+   "package",
+   "run",
+   "scaffold"
+  ],
+  "tags": [
+   "nodejs",
+   "npx",
+   "package"
+  ],
+  "sources": [
+   "https://nodejs.org/docs/latest/api/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ }
+]

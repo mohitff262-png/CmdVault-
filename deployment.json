@@ -1,0 +1,308 @@
+[
+ {
+  "id": "deployment-nginx-test",
+  "slug": "nginx-test",
+  "name": "nginx -t",
+  "description": "Validate nginx configuration.",
+  "explanation": "Always run before reloading to avoid downtime from a typo. Requires privileges because it reads protected files.",
+  "category": "deployment",
+  "syntax": "sudo nginx -t",
+  "examples": [
+   {
+    "command": "sudo nginx -t",
+    "description": "Check syntax before reloading."
+   }
+  ],
+  "platforms": [
+   "linux"
+  ],
+  "tools": [
+   "bash"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "config",
+   "nginx",
+   "syntax",
+   "t",
+   "test",
+   "validate"
+  ],
+  "tags": [
+   "deployment",
+   "config",
+   "nginx"
+  ],
+  "sources": [
+   "https://nginx.org/en/docs/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "deployment-systemctl-reload-nginx",
+  "slug": "systemctl-reload-nginx",
+  "name": "systemctl reload nginx",
+  "description": "Reload nginx without dropping connections.",
+  "explanation": "Runs with root privileges. Use after nginx -t succeeds.",
+  "category": "deployment",
+  "syntax": "sudo systemctl reload nginx",
+  "examples": [
+   {
+    "command": "sudo systemctl reload nginx",
+    "description": "Apply a new config."
+   }
+  ],
+  "platforms": [
+   "linux"
+  ],
+  "tools": [
+   "bash"
+  ],
+  "difficulty": "intermediate",
+  "risk": "caution",
+  "commonErrors": [],
+  "keywords": [
+   "nginx",
+   "reload",
+   "restart",
+   "server",
+   "systemctl",
+   "web"
+  ],
+  "tags": [
+   "deployment",
+   "nginx",
+   "reload"
+  ],
+  "sources": [
+   "https://nginx.org/en/docs/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "deployment-systemctl-status",
+  "slug": "systemctl-status",
+  "name": "systemctl status",
+  "description": "Check whether a service is running.",
+  "explanation": "See full logs with journalctl -u <service> -e.",
+  "category": "deployment",
+  "syntax": "systemctl status <service>",
+  "examples": [
+   {
+    "command": "systemctl status nginx",
+    "description": "Show state and recent log lines."
+   }
+  ],
+  "platforms": [
+   "linux"
+  ],
+  "tools": [
+   "bash"
+  ],
+  "difficulty": "beginner",
+  "risk": "safe",
+  "commonErrors": [],
+  "keywords": [
+   "journalctl",
+   "running",
+   "service",
+   "status",
+   "systemctl",
+   "systemd"
+  ],
+  "tags": [
+   "deployment",
+   "journalctl",
+   "running"
+  ],
+  "sources": [
+   "https://nginx.org/en/docs/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "deployment-pm2-start",
+  "slug": "pm2-start",
+  "name": "pm2 start",
+  "description": "Run a Node.js app as a managed background process.",
+  "explanation": "Restarts on crash. Run pm2 save and pm2 startup to survive reboots. Review the startup command before running it with privileges.",
+  "category": "deployment",
+  "syntax": "pm2 start <file> --name <name>",
+  "examples": [
+   {
+    "command": "pm2 start server.js --name api",
+    "description": "Start and supervise server.js."
+   }
+  ],
+  "platforms": [
+   "linux",
+   "macos"
+  ],
+  "tools": [
+   "bash"
+  ],
+  "difficulty": "intermediate",
+  "risk": "caution",
+  "commonErrors": [],
+  "keywords": [
+   "background",
+   "deploy",
+   "manager",
+   "node",
+   "nodejs",
+   "pm2",
+   "process",
+   "production",
+   "start"
+  ],
+  "tags": [
+   "deployment",
+   "background",
+   "deploy"
+  ],
+  "sources": [
+   "https://nginx.org/en/docs/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": true
+ },
+ {
+  "id": "deployment-certbot-nginx",
+  "slug": "certbot-nginx",
+  "name": "certbot --nginx",
+  "description": "Get a free HTTPS certificate for nginx.",
+  "explanation": "The domain must already point to the server and port 80 must be reachable. Certificates renew automatically via a timer.",
+  "category": "deployment",
+  "syntax": "sudo certbot --nginx -d <domain>",
+  "examples": [
+   {
+    "command": "sudo certbot --nginx -d example.com",
+    "description": "Request and install a Let's Encrypt certificate."
+   }
+  ],
+  "platforms": [
+   "linux"
+  ],
+  "tools": [
+   "bash"
+  ],
+  "difficulty": "intermediate",
+  "risk": "caution",
+  "commonErrors": [],
+  "keywords": [
+   "certbot",
+   "certificate",
+   "https",
+   "letsencrypt",
+   "nginx",
+   "ssl",
+   "tls"
+  ],
+  "tags": [
+   "deployment",
+   "certbot",
+   "certificate"
+  ],
+  "sources": [
+   "https://nginx.org/en/docs/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "deployment-ufw-allow",
+  "slug": "ufw-allow",
+  "name": "ufw allow",
+  "description": "Open a firewall port.",
+  "explanation": "Allow SSH before enabling ufw or you can lock yourself out of a remote server.",
+  "category": "deployment",
+  "syntax": "sudo ufw allow <port>/tcp",
+  "examples": [
+   {
+    "command": "sudo ufw allow 22/tcp",
+    "description": "Allow SSH."
+   }
+  ],
+  "platforms": [
+   "linux"
+  ],
+  "tools": [
+   "bash"
+  ],
+  "difficulty": "intermediate",
+  "risk": "caution",
+  "commonErrors": [],
+  "keywords": [
+   "allow",
+   "firewall",
+   "open",
+   "port",
+   "ufw",
+   "vps"
+  ],
+  "tags": [
+   "deployment",
+   "allow",
+   "firewall"
+  ],
+  "sources": [
+   "https://nginx.org/en/docs/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ },
+ {
+  "id": "deployment-deploy-node-site",
+  "slug": "deploy-node-site",
+  "name": "git pull && npm ci && pm2 restart",
+  "description": "Typical update of a Node.js site on a VPS.",
+  "explanation": "Run a build step first if your app needs one. Test on staging and keep the previous release available for rollback.",
+  "category": "deployment",
+  "syntax": "cd <app> && git pull && npm ci --omit=dev && pm2 restart <name>",
+  "examples": [
+   {
+    "command": "cd /srv/app && git pull && npm ci --omit=dev && pm2 restart api",
+    "description": "Pull, install, restart."
+   }
+  ],
+  "platforms": [
+   "linux"
+  ],
+  "tools": [
+   "bash"
+  ],
+  "difficulty": "intermediate",
+  "risk": "caution",
+  "commonErrors": [],
+  "keywords": [
+   "ci",
+   "deploy",
+   "git",
+   "node",
+   "nodejs",
+   "npm",
+   "pm2",
+   "pull",
+   "release",
+   "restart",
+   "update",
+   "vps",
+   "website"
+  ],
+  "tags": [
+   "deployment",
+   "ci",
+   "deploy"
+  ],
+  "sources": [
+   "https://nginx.org/en/docs/"
+  ],
+  "lastReviewed": "2026-10-20",
+  "featured": false
+ }
+]
